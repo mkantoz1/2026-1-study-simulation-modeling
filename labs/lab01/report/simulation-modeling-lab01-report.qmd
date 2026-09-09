@@ -1,18 +1,17 @@
 ---
-## Author
 author:
-  name: Дмитрий Сергеевич Кулябов
-  degrees: DSc
-  orcid: 0000-0002-0877-7063
+  name: Mehmet Efe Kantoz
+  bilet-no: 1032228428
+  class: НКН-01-23
   email: kulyabov-ds@rudn.ru
   affiliation:
-    - name: Российский университет дружбы народов
-      country: Российская Федерация
-      postal-code: 117198
-      city: Москва
-      address: ул. Миклухо-Маклая, д. 6
+    name: Российский университет дружбы народов
+    country: Российская Федерация
+    postal-code: 117198
+    city: Москва
+    time: 28.08.2026
+    address: ул. Миклухо-Маклая, д. 6
 
-## Title
 title: "Шаблон отчёта по лабораторной работе"
 subtitle: "Простейший вариант"
 license: "CC BY"
@@ -52,10 +51,302 @@ license: "CC BY"
 Более подробно про Unix см. в [@tanenbaum_book_modern-os_ru; @robbins_book_bash_en; @zarrelli_book_mastering-bash_en; @newham_book_learning-bash_en].
 
 # Выполнение лабораторной работы
+{{< include ../project/markdown/01_exponential_growth/01_exponential_growth.qmd >}}
+
+![ Установка git](image/1.png){#fig-001 width=70%}
+
+
+
+![Установим интерфейс командной строки к github:](image/2.png){#fig-001 width=70%}
+
+
+
+![ Зададим имя и email владельца репозитория::](image/3.png){#fig-001 width=70%}
+
+
+![Настроим utf-8 в выводе сообщений git: ::](image/4.png){#fig-001 width=70%}
+
+
+
+![Зададим имя начальной ветки (будем называть её master):](image/4.png){#fig-001 width=70%}
+
+
+![Настройка gitverse:](image/5.png){#fig-001 width=70%}
+
+
+
+![Создайте учётную запись на gitverse](image/6.png){#fig-001 width=70%}
+
+
+
+![авторизоваться Ha GitHub](image/7.png){#fig-001 width=70%}
+
+
+
+
+
+![ Создадим ключ для доступа к github:](image/8.png){#fig-001 width=70%}
+
+
+
+
+![Добавляем ключ ssh-add ](image/9.png){#fig-001 width=70%}
+
+
+
+![Добавьте ключ в учётную запись gitverse ](image/10.png){#fig-001 width=70%}
+
+
+
+![ Добавьте ключ в учётную запись github:](image/11.png){#fig-001 width=70%}
+
+
+
+
+![ Добавьте  ssh-key add:](image/12.png){#fig-001 width=70%}
+
+
+
+![ Генерируем ключ gpg --full-generate-key:](image/13.png){#fig-001 width=70%}
+
+
+
+
+![Выводим список ключей gpg --list-secret-keys:](image/14.png){#fig-001 width=70%}
+
+
+
+![Cкопируйте ваш сгенерированный PGP ключ в буфер обмена:](image/15.png){#fig-001 width=70%}
+
+
+
+
+![Перейдите в настройки Gitverse,нажмите накнопку Добавить GPG :](image/16.png){#fig-001 width=70%}
+
+
+
+![Перейдите в настройки GitHub,нажмите накнопку Добавить GPG :](image/17.png){#fig-001 width=70%}
+
+
+
+![Настройка автоматических подписей коммитов git:](image/18.png){#fig-001 width=70%}
+
+
+
+![choco install quarto:](image/19.png){#fig-001 width=70%}
+
+
+![Установка Node. yarn. pnpm:](image/20.png)(image/21.png){#fig-001 width=70%}
+
+
+![pnpm add -g cz-customizable:](image/22.png){#fig-001 width=70%}
+
+
+![pnpm add -g standard-version :](image/23.png){#fig-001 width=70%}
+
+
+![Репозиторий GitVerse:](image/24.png){#fig-001 width=70%}
+
+
+![Репозиторий GitHub:](image/25.png){#fig-001 width=70%}
+
+
+![Укажите название для вашего нового проекта:](image/27.png){#fig-001 width=70%}
+
+
+
+![Посмотреть доступные целиmake help:](image/26.png){#fig-001 width=70%}
+
+
+![Посмотреть список доступных курсов (make list):](image/28.png){#fig-001 width=70%}
+
+
+![Инициализируйте курс:echo simulation-modeling >COURSE make prepare:](image/29.png){#fig-001 width=70%}
+
+
+![Отправьте файлы на сервер (git add):](image/30.png){#fig-001 width=70%}
+
+
+![git push:](image/31.png){#fig-001 width=70%}
+
+
+![Запуште репозиторий на github:](image/32.png){#fig-001 width=70%}
+
+
+
+![Конфигурация git-flow:](image/33.png){#fig-001 width=70%}
+
+
+
+![Проверьте,что Вы на ветке develop::](image/34.png){#fig-001 width=70%}
+
+
+![Загрузите весь репозиторий в хранилище:](image/35.png){#fig-001 width=70%}
+
+
+![ Создадим релиз с версией 1.0.0:](image/36.png){#fig-001 width=70%}
+
+
+![Создадим журнал изменений](image/37.png){#fig-001 width=70%}
+
+
+
+![Добавим журнал изменений в индекс](image/38.png){#fig-001 width=70%}
+
+
+![Зальём релизную ветку в основную ветку](image/39.png){#fig-001 width=70%}
+
+
+![Отправим данные на github](image/40.png){#fig-001 width=70%}
+
+
+![ Скопируем CHANGELOG.md в каталог release:](image/41.png){#fig-001 width=70%}
+
+
+![Push all:](image/42.png){#fig-001 width=70%}
+
+
+![Cоздадим !релиз На gitverse](image/43.png){#fig-001 width=70%}
+
+
+![Cоздадим LAB01](image/44.png){#fig-001 width=70%}
+
+
+![Откройте терминал и запустите Julia:](image/45.png){#fig-001 width=70%}
+
+
+
+![В REPL выполните::](image/46.png){#fig-001 width=70%}
+
+
+
+![Установите основные пакеты:](image/47.png){#fig-001 width=70%}
+
+
+
+![Запустиm:](image/48.png){#fig-001 width=70%}
+
+
+![Создайте следующий скрипт:](image/49.png){#fig-001 width=70%}
+
+
+
+![ Посмотрите результирующие графики в каталоге:](image/50.png){#fig-001 width=70%}
+
+
+
+![Добавьте в файл описание в духе литературного программирования:](image/51.png){#fig-001 width=70%}
+
+
+
+![Выполните программу julia --project=. scripts/02_exponential_growth.jl:](image/52.png){#fig-001 width=70%}
+
+
+
+![включите поддержку кода julia. Добавьте после описания проекта::](image/53.png){#fig-001 width=70%}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Описываются проведённые действия, в качестве иллюстрации даётся ссылка на иллюстрацию ([рис. @fig-001]).
 
-![V Сольвеевский конгресс (1927) «Электроны и фотоны»](image/solvay.jpg){#fig-001 width=70%}
+
 
 # Выводы
 

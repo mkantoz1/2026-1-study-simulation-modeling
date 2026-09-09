@@ -1,0 +1,49 @@
+---
+title: "Базовый прогон модели"
+format: html
+---
+
+```{julia}
+#| echo: false
+#| output: true
+
+# 1. Ortam ve Paketlerin Yüklenmesi
+using Pkg
+Pkg.activate(normpath(joinpath(@__DIR__, "../../..")))
+using DrWatson
+@quickactivate "project"
+
+using Random
+using DataFrames
+using CSV
+using Plots
+
+include(srcdir("SIRPetri.jl"))
+using .SIRPetri
+
+# 2. Параметры (Parametreler)
+println("Инициализация параметров...")
+β = 0.3
+γ = 0.1
+tmax = 100.0
+
+# 3. Создаём сеть (Ağ Oluşturma)
+net, u0, states = build_sir_network(β, γ)
+
+# 4. Детерминированная симуляция (Deterministik Simülasyon)
+df_det = simulate_deterministic(net, u0, (0.0, tmax), saveat = 0.5, rates = [β, γ])
+CSV.write(datadir("sir_det.csv"), df_det)
+
+# 5. Стохастическая симуляция (Stokastik Simülasyon)
+Random.seed!(123)
+df_stoch = simulate_stochastic(net, u0, (0.0, tmax), rates = [β, γ])
+CSV.write(datadir("sir_stoch.csv"), df_stoch)
+
+# 6. Графики (Grafikler ve Çizimler)
+p_det = plot_sir(df_det)
+savefig(plotsdir("sir_det_dynamics.png"))
+
+p_stoch = plot_sir(df_stoch)
+savefig(plotsdir("sir_stoch_dynamics.png"))
+
+println("Базовый прогон завершён. Результаты в data/ и plots/")

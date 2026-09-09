@@ -64,3 +64,6 @@ format:
     indent: true
     include-in-header:
       - file: _resources/tex/preamble.tex
+engine: julia
+julia:
+ exeflags: ["--project=../project"]
