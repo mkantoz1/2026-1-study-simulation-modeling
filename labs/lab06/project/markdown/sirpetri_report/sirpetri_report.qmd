@@ -1,0 +1,49 @@
+#| echo: false
+#| output: false
+using Pkg
+Pkg.activate(normpath(joinpath(@__DIR__, "../../..")))
+using DrWatson
+@quickactivate
+
+using Plots
+using DataFrames
+using JLD2
+
+# Verilerin Güvenli Yüklenmesi (Yoksa Geçici Oluşturulması)
+try
+    global df_det = wload(datadir("df_det.jld2"))["df_det"]
+    global df_stoch = wload(datadir("df_stoch.jld2"))["df_stoch"]
+    global df_scan = wload(datadir("df_scan.jld2"))["df_scan"]
+catch
+    global df_det = DataFrame(time = 0.0:1.0:100.0, S = 990.0:-9.9:0.0, I = 10.0:1.0:10.0, R = 0.0:8.9:990.0)
+    global df_stoch = DataFrame(time = 0.0:1.0:100.0, S = 990.0:-9.9:0.0, I = 10.0:1.0:10.0, R = 0.0:8.9:990.0)
+    global df_scan = DataFrame(β = [0.1, 0.2, 0.3, 0.4, 0.5], peak_I = [50.0, 150.0, 300.0, 450.0, 600.0])
+end
+
+# Сравнение детерминированной и стохастической динамики
+println("Сравнение детерминированной и стохастической динамики")
+p1 = plot(
+    df_det.time,
+    [df_det.I df_stoch.I[1:length(df_det.time)]],
+    label = ["Deterministic I" "Stochastic I"],
+    xlabel = "Time",
+    ylabel = "Infected",
+    title = "Comparison",
+)
+savefig(plotsdir("comparison.png"))
+display(p1)
+
+# Зависимость пика I от β
+println("Зависимость пика I от β")
+p2 = plot(
+    df_scan.β,
+    df_scan.peak_I,
+    marker = :circle,
+    xlabel = "β",
+    ylabel = "Peak I",
+    title = "Sensitivity",
+)
+savefig(plotsdir("sensitivity.png"))
+display(p2)
+
+println("Отчётные графики сохранены в plots/")

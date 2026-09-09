@@ -1,0 +1,58 @@
+---
+title: "Анимация модели SIR"
+format: html
+---
+
+```{julia}
+#| echo: false
+#| output: true
+
+# 1. Paketlerin Yüklenmesi ve Ortam
+using Pkg
+Pkg.activate(normpath(joinpath(@__DIR__, "../../..")))
+using DrWatson
+@quickactivate "project"
+
+using Plots
+using DataFrames
+using CSV
+using JLD2
+
+include(srcdir("SIRPetri.jl"))
+using .SIRPetri
+
+# 2. Verinin Güvenli Yüklenmesi (Zaman serisi verisi)
+try
+    global df_det = wload(datadir("df_det.jld2"))["df_det"]
+catch
+    try
+        global df_det = CSV.read(datadir("sir_det.csv"), DataFrame)
+    catch
+        β = 0.3
+        γ = 0.1
+        tmax = 100.0
+        net, u0, _ = build_sir_network(β, γ)
+        global df_det = simulate_deterministic(net, u0, (0.0, tmax), saveat = 1.0, rates = [β, γ])
+    end
+end
+
+# 3. Анимация (Animasyon Oluşturma - Tek Hücrede)
+println("Создание анимации...")
+anim = @animate for i in 1:nrow(df_det)
+    plot(
+        df_det.time[1:i], 
+        [df_det.S[1:i] df_det.I[1:i] df_det.R[1:i]],
+        label = ["S" "I" "R"],
+        xlim = (0, maximum(df_det.time)),
+        ylim = (0, maximum([maximum(df_det.S), maximum(df_det.I), maximum(df_det.R)]) * 1.1),
+        xlabel = "Time",
+        ylabel = "Population",
+        title = "SIR Model Animation",
+        linewidth = 2
+    )
+end
+
+# 4. Kaydetme ve Çıktı
+gif_path = plotsdir("sir_animation.gif")
+gif(anim, gif_path, fps = 15)
+println("Анимация сохранена в: ", gif_path)
