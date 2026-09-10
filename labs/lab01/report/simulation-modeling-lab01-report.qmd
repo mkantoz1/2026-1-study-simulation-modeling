@@ -1,20 +1,21 @@
 ---
-author:
-  name: Mehmet Efe Kantoz
-  bilet-no: 1032228428
-  class: НКН-01-23
-  email: kulyabov-ds@rudn.ru
-  affiliation:
-    name: Российский университет дружбы народов
-    country: Российская Федерация
-    postal-code: 117198
-    city: Москва
-    time: 28.08.2026
-    address: ул. Миклухо-Маклая, д. 6
-
-title: "Шаблон отчёта по лабораторной работе"
+title: "Структура научной презентации"
 subtitle: "Простейший вариант"
+author:
+  name: "Mehmet Efe Kantoz"
+  no: "1032228428"
+  email: "1032228428@pfur.ru"
+  affiliation:
+    - name: "Российский университет дружбы народов"
+      country: "Российская Федерация"
+      postal-code: "117198"
+      city: "Москва"
+      address: "ул. Миклухо-Маклая, д. 6"
 license: "CC BY"
+date: "2026-08-30"
+date-format: "DD.MM.YYYY"
+execute:
+  eval: false
 ---
 
 # Цель работы
@@ -38,11 +39,11 @@ license: "CC BY"
 | Имя каталога | Описание каталога                                                                                                          |
 |--------------|----------------------------------------------------------------------------------------------------------------------------|
 | `/`          | Корневая директория, содержащая всю файловую                                                                               |
-| `/bin `      | Основные системные утилиты, необходимые как в однопользовательском режиме, так и при обычной работе всем пользователям     |
+| `/bin`       | Основные системные утилиты, необходимые как в однопользовательском режиме, так и при обычной работе всем пользователям     |
 | `/etc`       | Общесистемные конфигурационные файлы и файлы конфигурации установленных программ                                           |
 | `/home`      | Содержит домашние директории пользователей, которые, в свою очередь, содержат персональные настройки и данные пользователя |
 | `/media`     | Точки монтирования для сменных носителей                                                                                   |
-| `/root`      | Домашняя директория пользователя  `root`                                                                                   |
+| `/root`      | Домашняя директория пользователя `root`                                                                                    |
 | `/tmp`       | Временные файлы                                                                                                            |
 | `/usr`       | Вторичная иерархия для данных пользователя                                                                                 |
 
@@ -51,302 +52,172 @@ license: "CC BY"
 Более подробно про Unix см. в [@tanenbaum_book_modern-os_ru; @robbins_book_bash_en; @zarrelli_book_mastering-bash_en; @newham_book_learning-bash_en].
 
 # Выполнение лабораторной работы
+
 {{< include ../project/markdown/01_exponential_growth/01_exponential_growth.qmd >}}
 
-![ Установка git](image/1.png){#fig-001 width=70%}
+## Установка git
+![Установка git](image/1.png.png){#fig-001 width=70%}
 
+## Интерфейс командной строки
+![Установим интерфейс командной строки к github:](image/2.png.png){#fig-002 width=70%}
 
+## Настройка пользователя
+![Зададим имя и email владельца репозитория:](image/3.png.png){#fig-003 width=70%}
 
-![Установим интерфейс командной строки к github:](image/2.png){#fig-001 width=70%}
+## Настройка вывода
+![Настроим utf-8 в выводе сообщений git:](image/4.png.png){#fig-004 width=70%}
 
+## Начальная ветка
+![Зададим имя начальной ветки (будем называть её master):](image/4.png.png){#fig-005 width=70%}
 
+## Настройка gitverse 1
+![Настройка gitverse:](image/5.png.png){#fig-006 width=70%}
 
-![ Зададим имя и email владельца репозитория::](image/3.png){#fig-001 width=70%}
+## Настройка gitverse 2
+![Создайте учётную запись на gitverse](image/6.png.png){#fig-007 width=70%}
 
+## Авторизация GitHub
+![авторизоваться Ha GitHub](image/7.png.png){#fig-008 width=70%}
 
-![Настроим utf-8 в выводе сообщений git: ::](image/4.png){#fig-001 width=70%}
+## Доступ к github
+![Создадим ключ для доступа к github:](image/8.png.png){#fig-009 width=70%}
 
+## Добавление ключа ssh
+![Добавляем ключ ssh-add](image/9.png.png){#fig-010 width=70%}
 
+## Ключ gitverse
+![Добавьте ключ в учётную запись gitverse](image/10.png.png){#fig-011 width=70%}
 
-![Зададим имя начальной ветки (будем называть её master):](image/4.png){#fig-001 width=70%}
+## Ключ github
+![Добавьте ключ в учётную запись github:](image/11.png.png){#fig-012 width=70%}
 
+## ssh-key add
+![Добавьте ssh-key add:](image/12.png.png){#fig-013 width=70%}
 
-![Настройка gitverse:](image/5.png){#fig-001 width=70%}
+## Генерация GPG ключа
+![Генерируем ключ gpg --full-generate-key:](image/13.png.png){#fig-014 width=70%}
 
+## Список ключей
+![Выводим список ключей gpg --list-secret-keys:](image/14.png.png){#fig-015 width=70%}
 
+## Копирование PGP ключа
+![Cкопируйте ваш сгенерированный PGP ключ в буфер обмена:](image/15.png.png){#fig-016 width=70%}
 
-![Создайте учётную запись на gitverse](image/6.png){#fig-001 width=70%}
+## Добавление GPG в Gitverse
+![Перейдите в настройки Gitverse, нажмите на кнопку Добавить GPG :](image/16.png.png){#fig-017 width=70%}
 
+## Добавление GPG в GitHub
+![Перейдите в настройки GitHub, нажмите на кнопку Добавить GPG :](image/17.png.png){#fig-018 width=70%}
 
+## Автоматические подписи
+![Настройка автоматических подписей коммитов git:](image/18.png.png){#fig-019 width=70%}
 
-![авторизоваться Ha GitHub](image/7.png){#fig-001 width=70%}
+## Установка quarto
+![choco install quarto:](image/19.png.png){#fig-020 width=70%}
 
+## Установка Node, yarn, pnpm
+![Установка Node. yarn. pnpm:](image/20.png.png){#fig-021 width=70%}
+![Установка Node. yarn. pnpm:](image/21.png.png){#fig-022 width=70%}
 
+## cz-customizable
+![pnpm add -g cz-customizable:](image/22.png.png){#fig-023 width=70%}
 
+## standard-version
+![pnpm add -g standard-version :](image/23.png.png){#fig-024 width=70%}
 
+## Репозиторий GitVerse
+![Репозиторий GitVerse:](image/24.png.png){#fig-025 width=70%}
 
-![ Создадим ключ для доступа к github:](image/8.png){#fig-001 width=70%}
+## Репозиторий GitHub
+![Репозиторий GitHub:](image/25.png.png){#fig-026 width=70%}
 
+## Доступные цели make
+![Посмотреть доступные цели make help:](image/26.png.png){#fig-027 width=70%}
 
+## Название проекта
+![Укажите название для вашего нового проекта:](image/27.png.png){#fig-028 width=70%}
 
+## Список курсов
+![Посмотреть список доступных курсов (make list):](image/28.png.png){#fig-029 width=70%}
 
-![Добавляем ключ ssh-add ](image/9.png){#fig-001 width=70%}
+## Инициализация курса
+![Инициализируйте курс: echo simulation-modeling >COURSE make prepare:](image/29.png.png){#fig-030 width=70%}
 
+## Отправка файлов
+![Отправьте файлы на сервер (git add):](image/30.png.png){#fig-031 width=70%}
 
+## Git push
+![git push:](image/31.png.png){#fig-032 width=70%}
 
-![Добавьте ключ в учётную запись gitverse ](image/10.png){#fig-001 width=70%}
+## Push на github
+![Запуште репозиторий на github:](image/32.png.png){#fig-033 width=70%}
 
+## Конфигурация git-flow
+![Конфигурация git-flow:](image/33.png.png){#fig-034 width=70%}
 
+## Ветка develop
+![Проверьте, что Вы на ветке develop:](image/34.png.png){#fig-035 width=70%}
 
-![ Добавьте ключ в учётную запись github:](image/11.png){#fig-001 width=70%}
+## Загрузка репозитория
+![Загрузите весь репозиторий в хранилище:](image/35.png.png){#fig-036 width=70%}
 
+## Создание релиза
+![Создадим релиз с версией 1.0.0:](image/36.png.png){#fig-037 width=70%}
 
+## Журнал изменений
+![Создадим журнал изменений](image/37.png.png){#fig-038 width=70%}
 
+## Индекс журнала
+![Добавим журнал изменений в индекс](image/38.png.png){#fig-039 width=70%}
 
-![ Добавьте  ssh-key add:](image/12.png){#fig-001 width=70%}
+## Релизная ветка
+![Зальём релизную ветку в основную ветку](image/39.png.png){#fig-040 width=70%}
 
+## Отправка данных
+![Отправим данные на github](image/40.png.png){#fig-041 width=70%}
 
+## Копирование CHANGELOG
+![Скопируем CHANGELOG.md в каталог release:](image/41.png.png){#fig-042 width=70%}
 
-![ Генерируем ключ gpg --full-generate-key:](image/13.png){#fig-001 width=70%}
+## Push all
+![Push all:](image/42.png.png){#fig-043 width=70%}
 
+## Релиз Gitverse
+![Cоздадим релиз На gitverse](image/43.png.png){#fig-044 width=70%}
 
+## Создание LAB01
+![Cоздадим LAB01](image/44.png.png){#fig-045 width=70%}
 
+## Терминал Julia
+![Откройте терминал и запустите Julia:](image/45.png.png){#fig-046 width=70%}
 
-![Выводим список ключей gpg --list-secret-keys:](image/14.png){#fig-001 width=70%}
+## REPL
+![В REPL выполните:](image/46.png.png){#fig-047 width=70%}
 
+## Основные пакеты
+![Установите основные пакеты:](image/47.png.png){#fig-048 width=70%}
 
+## Запуск
+![Запустиm:](image/48.png.png){#fig-049 width=70%}
 
-![Cкопируйте ваш сгенерированный PGP ключ в буфер обмена:](image/15.png){#fig-001 width=70%}
+## Скрипт
+![Создайте следующий скрипт:](image/49.png.png){#fig-050 width=70%}
 
+## Графики
+![Посмотрите результирующие графики в каталоге:](image/50.png.png){#fig-051 width=70%}
 
+## Литературное программирование
+![Добавьте в файл описание в духе литературного программирования:](image/51.png.png){#fig-052 width=70%}
 
+## Выполнение программы
+![Выполните программу julia --project=. scripts/02_exponential_growth.jl:](image/52.png.png){#fig-053 width=70%}
 
-![Перейдите в настройки Gitverse,нажмите накнопку Добавить GPG :](image/16.png){#fig-001 width=70%}
+## Поддержка кода Julia
+![включите поддержку кода julia. Добавьте после описания проекта:](image/53.png.png){#fig-054 width=70%}
 
-
-
-![Перейдите в настройки GitHub,нажмите накнопку Добавить GPG :](image/17.png){#fig-001 width=70%}
-
-
-
-![Настройка автоматических подписей коммитов git:](image/18.png){#fig-001 width=70%}
-
-
-
-![choco install quarto:](image/19.png){#fig-001 width=70%}
-
-
-![Установка Node. yarn. pnpm:](image/20.png)(image/21.png){#fig-001 width=70%}
-
-
-![pnpm add -g cz-customizable:](image/22.png){#fig-001 width=70%}
-
-
-![pnpm add -g standard-version :](image/23.png){#fig-001 width=70%}
-
-
-![Репозиторий GitVerse:](image/24.png){#fig-001 width=70%}
-
-
-![Репозиторий GitHub:](image/25.png){#fig-001 width=70%}
-
-
-![Укажите название для вашего нового проекта:](image/27.png){#fig-001 width=70%}
-
-
-
-![Посмотреть доступные целиmake help:](image/26.png){#fig-001 width=70%}
-
-
-![Посмотреть список доступных курсов (make list):](image/28.png){#fig-001 width=70%}
-
-
-![Инициализируйте курс:echo simulation-modeling >COURSE make prepare:](image/29.png){#fig-001 width=70%}
-
-
-![Отправьте файлы на сервер (git add):](image/30.png){#fig-001 width=70%}
-
-
-![git push:](image/31.png){#fig-001 width=70%}
-
-
-![Запуште репозиторий на github:](image/32.png){#fig-001 width=70%}
-
-
-
-![Конфигурация git-flow:](image/33.png){#fig-001 width=70%}
-
-
-
-![Проверьте,что Вы на ветке develop::](image/34.png){#fig-001 width=70%}
-
-
-![Загрузите весь репозиторий в хранилище:](image/35.png){#fig-001 width=70%}
-
-
-![ Создадим релиз с версией 1.0.0:](image/36.png){#fig-001 width=70%}
-
-
-![Создадим журнал изменений](image/37.png){#fig-001 width=70%}
-
-
-
-![Добавим журнал изменений в индекс](image/38.png){#fig-001 width=70%}
-
-
-![Зальём релизную ветку в основную ветку](image/39.png){#fig-001 width=70%}
-
-
-![Отправим данные на github](image/40.png){#fig-001 width=70%}
-
-
-![ Скопируем CHANGELOG.md в каталог release:](image/41.png){#fig-001 width=70%}
-
-
-![Push all:](image/42.png){#fig-001 width=70%}
-
-
-![Cоздадим !релиз На gitverse](image/43.png){#fig-001 width=70%}
-
-
-![Cоздадим LAB01](image/44.png){#fig-001 width=70%}
-
-
-![Откройте терминал и запустите Julia:](image/45.png){#fig-001 width=70%}
-
-
-
-![В REPL выполните::](image/46.png){#fig-001 width=70%}
-
-
-
-![Установите основные пакеты:](image/47.png){#fig-001 width=70%}
-
-
-
-![Запустиm:](image/48.png){#fig-001 width=70%}
-
-
-![Создайте следующий скрипт:](image/49.png){#fig-001 width=70%}
-
-
-
-![ Посмотрите результирующие графики в каталоге:](image/50.png){#fig-001 width=70%}
-
-
-
-![Добавьте в файл описание в духе литературного программирования:](image/51.png){#fig-001 width=70%}
-
-
-
-![Выполните программу julia --project=. scripts/02_exponential_growth.jl:](image/52.png){#fig-001 width=70%}
-
-
-
-![включите поддержку кода julia. Добавьте после описания проекта::](image/53.png){#fig-001 width=70%}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+---
 
 Описываются проведённые действия, в качестве иллюстрации даётся ссылка на иллюстрацию ([рис. @fig-001]).
-
-
 
 # Выводы
 
